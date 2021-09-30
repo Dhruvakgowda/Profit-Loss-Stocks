@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+:root {
+  --primary: #2478b7;
+  --color: rgb(54, 54, 54);
+  --button-bg: rgb(77, 77, 77);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: var(--color);
+  background-color: var(--primary);
+}
+
+.App {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 0 1rem;
+}
+
+header {
+  margin: 2rem 0;
+}
+
+header h1 {
+  margin: 1rem 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 3rem 0 1rem 0;
+}
+
+.wrapper {
+  flex: 1;
+  margin: 0 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+input,
+button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 15rem;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.stocks {
+  flex: 1;
+  width: 25rem;
+  height: auto;
+  margin: 0 2rem;
+}
+
+footer {
+  margin-top: auto;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+
+footer a,
+header a {
+  color: inherit;
+}
