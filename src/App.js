@@ -4,7 +4,7 @@ import "./styles.css";
 export default function App() {
   var [result, setResult] = useState("");
 
-  function checkHandler(event) {
+  function submitHandler(event) {
     event.preventDefault();
 
     let diff, percent, msg;
@@ -14,13 +14,12 @@ export default function App() {
     let quantity = document.querySelector("#quantity").value;
     let currentPrice = document.querySelector("#current-price").value;
 
-    // convert to number *IMP*
     initialPrice = Number(initialPrice);
     quantity = Number(quantity);
     currentPrice = Number(currentPrice);
 
     if (initialPrice > currentPrice) {
-      // loss
+      
       diff = initialPrice - currentPrice;
       percent = (diff / initialPrice) * 100;
 
@@ -34,7 +33,6 @@ export default function App() {
         body.style.backgroundColor = "#D9AD26";
       }
     } else if (currentPrice > initialPrice) {
-      // profit
       diff = currentPrice - initialPrice;
       percent = (diff / initialPrice) * 100;
 
@@ -48,9 +46,8 @@ export default function App() {
         body.style.backgroundColor = "#D9AD26";
       }
     } else {
-      // no profit or loss
       msg = "You're stagnant! ";
-      body.style.backgroundColor = "rgb(170, 183, 255)";
+      body.style.backgroundColor = "#2478b7";
     }
     setResult(msg);
   }
@@ -71,13 +68,13 @@ export default function App() {
       </header>
 
       <main>
-        <div className="wrapper">
+        <div className="container">
           <p style={{ color: "white" }}>
             Find out if your stock gained profit or loss?
           </p>
           <p style={{ color: "wheat" }}>Input your Investment</p>
 
-          <form onSubmit={(event) => checkHandler(event)}>
+          <form onSubmit={(event) => submitHandler(event)}>
             <input
               type="number"
               id="initial-price"
@@ -103,7 +100,7 @@ export default function App() {
 
             <button
               type="submit"
-              className="check-btn"
+              className="submit-btn"
               style={{ fontWeight: "bold" }}
             >
               Submit
@@ -125,13 +122,12 @@ export default function App() {
           </div>
         </div>
 
-        <div className="stock_img"></div>
       </main>
 
       <footer>
         <a
           href="https://dhruvak.netlify.app"
-          target="_blank"
+          style={{ color:"white" }}
           rel="noopener noreferrer"
         >
           Dhruva | Portfolio
